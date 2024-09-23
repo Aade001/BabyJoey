@@ -29,25 +29,25 @@ def generate_text(model, tokenizer, start_token="<|startoftext|>", max_length=50
     
     return generated_text
 
-def main():
-    # Define device
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+# def main():
+#     # Define device
+#     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     
-    # Load the tokenizer
-    tokenizer = GPT2Tokenizer.from_pretrained('gpt2', clean_up_tokenization_spaces=True)
-    tokenizer.pad_token = tokenizer.eos_token
+#     # Load the tokenizer
+#     tokenizer = GPT2Tokenizer.from_pretrained('gpt2', clean_up_tokenization_spaces=True)
+#     tokenizer.pad_token = tokenizer.eos_token
     
-    # Load the trained model
-    model = BabyJoey() 
-    model.load_state_dict(torch.load("baby_joey_model.pth"))
-    model.to(device)
+#     # Load the trained model
+#     model = BabyJoey() 
+#     model.load_state_dict(torch.load("baby_joey_model.pth"))
+#     model.to(device)
     
-    # Generate text
-    generated_text = generate_text(model, tokenizer, start_token="<|startoftext|>", max_length=50, device=device)
+#     # Generate text
+#     generated_text = generate_text(model, tokenizer, start_token="<|startoftext|>", max_length=50, device=device)
     
-    # Print the generated text
-    print("Generated text:")
-    print(generated_text)
+#     # Print the generated text
+#     print("Generated text:")
+#     print(generated_text)
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
